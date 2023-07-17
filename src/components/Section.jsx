@@ -12,7 +12,7 @@ const Section = ({ title, description, backgroundImg, leftBtn, rightBtn }) => {
       <Buttons>
         <ButtonGroup>
           <LeftButton>{leftBtn}</LeftButton>
-          <RightButton>{rightBtn}</RightButton>
+          {rightBtn && <RightButton>{rightBtn}</RightButton>}
         </ButtonGroup>
 
         <DownArrow src="/images/down-arrow.svg"></DownArrow>
@@ -26,8 +26,10 @@ export default Section;
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-${'' /* 
-  background-image: url("/images/model-s.jpg"); */}
+  ${
+    "" /* 
+  background-image: url("/images/model-s.jpg"); */
+  }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,7 +39,7 @@ ${'' /*
   justify-content: space-between;
   align-items: center;
 
-  background-image: ${props => `url("/images/${props.bgImage}" )`};
+  background-image: ${(props) => `url("/images/${props.bgImage}" )`};
 `;
 
 const ItemText = styled.div`
